@@ -1,0 +1,42 @@
+
+
+div.modal-bg {
+    background-color: darkslategray;
+    /* width: 100vw; */
+    height: 100vh; 
+}
+div.login-modal {
+    position: absolute;
+    left: 50%;
+    top:50%;
+    width:30%;
+    margin-top: -10%;
+    margin-left: -15%;
+    border-top: 2.5em solid indigo;
+    box-shadow: 0px 2px 2px black;
+    padding:0.5em;
+    background-color:white;
+}
+div.login-modal > *{
+    display:block;
+    margin: 0.5em auto;
+    text-align: center;
+}
+div.login-modal > p:first-child {
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+}
+div.login-modal > p:nth-child(2) {
+    color:darkslategray;
+    font-family: 'Raleway',sans-serif;
+}
+div.login-modal > button {
+    margin-top: 1em;
+    background-color: white;
+    box-shadow: 0px 2px 2px black;
+    border: none;
+    padding:0.5em;
+}
+div.login-modal > button:active {
+    background-color: lightgray;
+}
