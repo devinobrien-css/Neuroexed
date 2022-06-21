@@ -19,7 +19,7 @@ module.exports = gql`
     }
  
     type Skill {
-        id: ID!,
+        id: ID! @id,
         title: String,
         tags: [String],
         users: [User!]! @relationship(type: "HAS_SKILL", properties: "HasSkill", direction: IN)
