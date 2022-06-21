@@ -1,0 +1,31 @@
+
+div.nav{
+    height: 100vh;
+    background-color: purple;
+    position: fixed;
+    left:0;
+    top:2em;
+    padding-top:3em;
+    display: flex;
+    flex-direction: column;
+}
+
+div.nav > button {
+    border: none;
+    background-color: transparent;
+    padding: 1em;
+    color:white;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 1.75em;
+}
+
+div.nav > button:hover {
+    background-color: blueviolet;
+    transition: background-color 500ms ease;
+}
+
+div.nav > button.current {
+    background-color: white;
+    border-left:0.25em solid lightslategray;
+    color:indigo
+}

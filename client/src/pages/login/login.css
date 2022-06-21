@@ -24,7 +24,7 @@ div.login-modal > *{
 }
 div.login-modal > p:first-child {
     font-size: 2em;
-    font-family: 'Lato', sans-serif;
+    font-family: 'League Gothic', sans-serif;
 }
 div.login-modal > p:nth-child(2) {
     color:darkslategray;

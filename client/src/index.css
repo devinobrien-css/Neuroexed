@@ -3,3 +3,33 @@ body{
     padding: 0;
     border: none;
 }
+
+div.container {
+    position: relative;
+    border:2px solid green;
+    width:85%;
+    height:140vh;
+    top:5em;
+    left: 9em;
+    transition:width 1s ease;
+}
+@media screen and (min-width:1470px) {
+    div.container {
+        width:90%;
+    }
+}
+@media screen and (max-width:1000px) {
+    div.container {
+        width:80%;
+    }
+}
+@media screen and (max-width:750px) {
+    div.container {
+        width:75%;
+    }
+}
+@media screen and (max-width:630px) {
+    div.container {
+        width:65%;
+    }
+}

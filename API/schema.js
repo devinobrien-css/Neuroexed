@@ -13,6 +13,8 @@ module.exports = gql`
         id: ID! @id,
         first: String,
         last: String,
+        title: String,
+        bio: String,
         email: String,
         img: String,
         skills: [Skill!]! @relationship(type: "HAS_SKILL", properties: "HasSkill", direction: OUT)
@@ -26,6 +28,7 @@ module.exports = gql`
     }
     
     interface HasSkill @relationshipProperties {
-        rating: Int!
+        rating: Int!,
+        isShowcased: Boolean
     }
 `;
