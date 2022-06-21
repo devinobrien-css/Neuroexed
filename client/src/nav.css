@@ -1,8 +1,12 @@
 
 div.nav{
     height: 100vh;
-    background-color: purple;
+    background-image: url('./img/hex-nav-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     position: fixed;
+
     left:0;
     top:2em;
     padding-top:3em;
