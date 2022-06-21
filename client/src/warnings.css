@@ -1,0 +1,17 @@
+div.warning {
+    border:2px solid yellow;
+    background-color: rgba(209, 209, 30, 0.46);
+    display: flex;
+}
+div.warning > div:first-child > p {
+    padding:0.25em 0.5em;
+    width: fit-content;
+    border: 2px solid yellow;
+    border-radius: 50%;
+    color:yellow;
+    font-size: 2.5em;
+}
+div.warning > div:nth-child(2) > div > p:nth-child(2){
+    color:darkslategray;
+    font-family: 'Lato',sans-serif;
+}
