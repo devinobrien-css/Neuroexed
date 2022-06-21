@@ -13,29 +13,27 @@ import Header from './header';
 import Nav from './nav';
 
 
+import {FETCH_USER,FETCH_USERS} from './queries/user_queries';
+
+
+// establish server connection
 const client = new ApolloClient({
   uri: ' http://localhost:4000/',
   cache: new InMemoryCache()
 });
 
-const FETCH_USERS = gql`
-  query fetchUsers {
-    users{
-      id
-      first
-      last
-      email
-      skillsConnection {
-        edges {
-          rating
-          node {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
+
+const UserProfile = (args) => {
+    return (
+        <div>
+            {args.first} {args.last} <br/>
+            -- {args.email}
+            
+        </div> 
+    )
+}
+
+
 
 function FetchUsers() {
   const { loading, error, data } = useQuery(FETCH_USERS);
@@ -57,49 +55,46 @@ function FetchUsers() {
 
 
 
-const FETCH_USER = gql`
-    query FetchUser($where: UserWhere) {
-        users(where: $where) {
-            id
-            first
-            last
-            email
-            skillsConnection {
-                edges {
-                    rating
-                    node {
-                        title
-                    }
-                }
-            }
-        }
-    }   
-`;
+
+/** Reaches to Apollo Server, returns rendered user page
+ * 
+ * @param {*} args 
+ * @returns 
+ */
 function FetchUser(args) {
-    const user_email = args.email;
+    //query data
 	const { loading, error, data } = useQuery(FETCH_USER,{variables:{
         "where": {
-            "email": "dob@jg.c"
+            "email": args.email
         }
     }});
 
+    //validate safe retrieval
 	if (loading) return <p>Loading...</p>;
 	if (error) return <p>Error : {error.message}</p>;
     if (data.users.length != 1) return <p>Internal Duplication Error</p>;
 
+    //return UserProfile
 	return (
         data.users.map(({id, first, last, email, skillsConnection}) => (
-            <div>
-                    Welcome {first} {last} <br/>
-                    Your Skills:
-                    {skillsConnection.edges.map(({rating,node}) => (
-                        <p>{rating} -- {node.title}</p>
-                    ))}
-            </div>
+            <UserProfile first={first} email={email} skills={skillsConnection} />
+            
+            
+            // <div>
+            //         Welcome {first} {last} <br/>
+            //         Your Skills:
+            //         {skillsConnection.edges.map(({rating,node}) => (
+            //             <p>{rating} -- {node.title}</p>
+            //         ))}
+            // </div>
         ))	
 	);
 }
 
+
+
+
+//TODO:
 function FetchAdmin(args) {
     const user_email = args.email;
 	const { loading, error, data } = useQuery(FETCH_USER,{variables:{
@@ -125,6 +120,8 @@ function FetchAdmin(args) {
 	);
 }
 
+
+
 /** Reaches to Apollo Server and renders objects
  * 
  * @param {*} args 
@@ -132,9 +129,10 @@ function FetchAdmin(args) {
  */
 const DataReach = (args) => {
     if(args.req === 'USER'){
+        console.log('fetching user ')
         return (
             <ApolloProvider client={client}>
-                <FetchUser email="dob@jg.c" />
+                <FetchUser email={args.user_id} />
                 {/* <FetchUsers /> */}
             </ApolloProvider>
         );
@@ -158,13 +156,14 @@ const DataReach = (args) => {
  * 
  * @param {String} args {
  *      req : specifies the type of page to be rendered (user, admin, etc)
+ *      user_id : 
  * }
  * @returns the sections for the page requested
  */
 const ContentBin = (args) => {
     return (
         <div className='container'>
-            <DataReach req={args.req} />
+            <DataReach req={args.req} user_id={args.user_id}/>
         </div>
     )
 }
@@ -174,11 +173,12 @@ const ContentBin = (args) => {
  * @returns the current user requested page
  */
 const App = () => {
+    //TODO: add functionality for page specification
     return (
         <>
             <Header />
             <Nav />
-            <ContentBin req='USER'/>
+            <ContentBin req='USER' user_id='dob@jg.c'/>
         </>
     );
 }
