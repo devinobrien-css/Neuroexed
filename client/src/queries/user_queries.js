@@ -7,6 +7,9 @@ export const FETCH_USER = gql`
         users(where: $where) {
             id
             first
+            last
+            title
+            img
             email
                 skillsConnection {
                 edges {

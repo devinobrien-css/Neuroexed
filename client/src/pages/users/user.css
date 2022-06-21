@@ -1,0 +1,6 @@
+div.profile-header {
+    width: 80%;
+    border-top:8px solid indigo;
+    background-color: lightgray;
+    margin:0 auto;
+}

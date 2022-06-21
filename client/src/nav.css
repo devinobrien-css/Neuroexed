@@ -26,6 +26,6 @@ div.nav > button:hover {
 
 div.nav > button.current {
     background-color: white;
-    border-left:0.25em solid lightslategray;
+    outline:0.25em solid lightslategray;
     color:indigo
 }

@@ -11,7 +11,8 @@ import {
 import './index.css';
 import Header from './header';
 import Nav from './nav';
-
+import UserProfile from './pages/users/user';
+import Login from './pages/login/login';
 
 import {FETCH_USER,FETCH_USERS} from './queries/user_queries';
 
@@ -23,15 +24,7 @@ const client = new ApolloClient({
 });
 
 
-const UserProfile = (args) => {
-    return (
-        <div>
-            {args.first} {args.last} <br/>
-            -- {args.email}
-            
-        </div> 
-    )
-}
+
 
 
 
@@ -76,8 +69,8 @@ function FetchUser(args) {
 
     //return UserProfile
 	return (
-        data.users.map(({id, first, last, email, skillsConnection}) => (
-            <UserProfile first={first} email={email} skills={skillsConnection} />
+        data.users.map(({id, first, last, title, email, skillsConnection}) => (
+            <UserProfile first={first} last={last} title={title} email={email} skills={skillsConnection} />
             
             
             // <div>
@@ -140,7 +133,7 @@ const DataReach = (args) => {
     else if(args.req === 'ADMIN') {
         return (
             <ApolloProvider client={client}>
-                <FetchAdmin email="dob@jg.c" />
+                <FetchAdmin email={args.user_id} />
             </ApolloProvider>
         );
     }
@@ -161,26 +154,111 @@ const DataReach = (args) => {
  * @returns the sections for the page requested
  */
 const ContentBin = (args) => {
-    return (
-        <div className='container'>
-            <DataReach req={args.req} user_id={args.user_id}/>
-        </div>
-    )
+    if(args.req === 'USER'){
+        return (
+            <div className='container'>
+                <DataReach req={args.req} user_id={args.user_id}/>
+            </div>
+        )
+    }
+    else if(args.req === 'PEOPLE'){
+        return (
+            <div className='container'>
+                <p>PEOPLE</p>
+            </div>
+        )
+    }
+    else if(args.req === 'PROJECTS'){
+        return (
+            <div className='container'>
+                <p>PROJECTS</p>
+            </div>
+        )
+    }
+    else if(args.req === 'SKILLS'){
+        return (
+            <div className='container'>
+                <p>SKILLS</p>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className='container'>
+                <p>UNKNOWN</p>
+            </div>
+        )
+    }
+        
 }
+
+
 
 
 /** Main Application Container - controls page functionality/content rendering
  * @returns the current user requested page
  */
 const App = () => {
+    //TODO: ADD AUTH HERE
+    const auth_user_email = 'dobrien@jg.com';
+
+    const [currentState, setState] = React.useState("");
+
+    if(currentState === "")
+        setState("USER");
+
+    const handleToggle = (state) => {
+        setState(state);
+    };
+    const stateFunctions = {'USER':()=>handleToggle('USER'), 'PEOPLE': ()=>handleToggle('PEOPLE'), 'PROJECTS': ()=>handleToggle('PROJECTS'), 'SKILLS' : ()=>handleToggle('SKILLS')};
+
     //TODO: add functionality for page specification
-    return (
-        <>
-            <Header />
-            <Nav />
-            <ContentBin req='USER' user_id='dob@jg.c'/>
-        </>
-    );
+
+    if(currentState  === 'USER') {
+        return (
+            <>
+                <Header />
+                <Nav current={currentState} functions={stateFunctions}/>
+                <ContentBin req={currentState} user_id={auth_user_email}/>
+            </>
+        );
+    }
+    else if(currentState  === 'LOGIN'){
+        return (
+            <>
+                <Login />
+            </>
+        )
+    }
+    else if(currentState  === 'PEOPLE') {
+        console.log('current ' + currentState)
+        return (
+            <>
+                <Header />
+                <Nav current={currentState} functions={stateFunctions}/>
+                <ContentBin req={currentState} user_id={auth_user_email}/>
+            </>
+        );
+    }
+    else if(currentState  === 'PROJECTS') {
+        return (
+            <>
+                <Header />
+                <Nav current={currentState} functions={stateFunctions}/>
+                <ContentBin req={currentState} user_id={auth_user_email}/>
+            </>
+        );
+    }
+    else if(currentState  === 'SKILLS') {
+        return (
+            <>
+                <Header />
+                <Nav current={currentState} functions={stateFunctions}/>
+                <ContentBin req={currentState} user_id={auth_user_email}/>
+            </>
+        );
+    }
+        
 }
 
 

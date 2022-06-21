@@ -3,10 +3,14 @@ import React from 'react';
 import './user.css';
 
 
-function UserProfile() {
-  return (
-	<p></p>
-  );
+const UserProfile = (args) => {
+    return (
+        <div className='profile-header'>
+            {args.first} {args.last} <br/>
+            -- {args.email}
+            
+        </div> 
+    )
 }
 
 export default UserProfile;
