@@ -2,14 +2,14 @@ body{
     margin: 0;
     padding: 0;
     border: none;
+    background-color: rgb(240,240,240);
 }
 
 div.container {
     position: relative;
-    border:2px solid green;
     width:85%;
     height:140vh;
-    top:5em;
+    top:5.25em;
     left: 9em;
     transition:width 1s ease;
 }

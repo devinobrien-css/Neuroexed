@@ -8,7 +8,7 @@ const Header = (user_data) => {
             <p>CONNECT Lite</p>
         </div>
         <div>
-            <p>I</p>
+            <img src='http://placehold.jp/50x50.png' alt='profile pic' />
         </div>
     </div>;
 }
