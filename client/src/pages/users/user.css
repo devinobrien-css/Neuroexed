@@ -1,6 +1,32 @@
 div.profile-header {
-    width: 80%;
-    border-top:8px solid indigo;
-    background-color: lightgray;
+    width: 95%;
+    border-bottom:3em solid indigo;
+    background-image:url('../../img/hex-bg.webp');
+    background-position: center;
     margin:0 auto;
+    box-shadow: 4px 1px 4px lightslategray;
+    display:flex;
+    padding:1em;
+}
+div.profile-header > div > img {
+    border-radius: 50%;
+    border:4px solid white;
+    margin-bottom:-2.5em;
+}
+div.profile-header > div:nth-child(2) {
+    margin-left:1em;
+}
+div.profile-header > div:nth-child(2) > p:first-child {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    padding: 0;
+    margin:0;
+}
+div.profile-header > div:nth-child(2) > p:nth-child(2) {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    color:gray;
+    padding: 0;
+    padding-top: 1em;
+    margin:0;
 }
