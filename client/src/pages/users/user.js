@@ -1,38 +1,16 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  useQuery,
-  gql
-} from "@apollo/client";
+
 
 import './user.css';
 
-const client = new ApolloClient({
-  uri: ' http://localhost:4000/',
-  cache: new InMemoryCache()
-});
 
-const FETCH_USERS = gql`
-  query FetchUsers {
-    users{
-      id
-      first
-      last
-      email
-      skillsConnection {
-        edges {
-          rating
-          node {
-            title
-          }
-        }
-      }
-    }
-  }
-`;
+
+
+/**
+ * Fetches general list of all users
+ * @returns 
+ */
 function FetchUsers() {
   const { loading, error, data } = useQuery(FETCH_USERS);
 
@@ -51,26 +29,6 @@ function FetchUsers() {
   ));
 };
 
-
-
-const FETCH_USER = gql`
-	query Users($where: where) {
-		users(where: $where) {
-			id
-			first
-			last
-			email
-			skillsConnection {
-				edges {
-				rating
-				node {
-					title
-				}
-				}
-			}
-		}
-  	}
-`;
 function FetchUser(email) {
 
 	const { loading, error, data } = useQuery(FETCH_USER,{
