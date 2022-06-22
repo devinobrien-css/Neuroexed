@@ -1,12 +1,25 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import './user.css';
-import Warning from '../../warnings';
 
+/* STYLESHEET IMPORTS */
+import '../../components/content_sections.css'; //contains column and row container styles
+import './user.css'; //contains styles specific to the user page
+
+/* COMPONENT AND ELEMENT IMPORTS */
+import Warning from '../../components/warnings/warnings'; //contains warning sections and modals
 import ProfileAboutSection from './user_about';
 import ProfileSkillsSection from './user_skills';
+import ProfileExperienceSection from './user_experience';
 
 
+
+/** Generates and returns the specified user page content section
+ * 
+ * @param {*} args {
+ * 		section : specifies the type of section to generate
+ * 	}
+ * @returns a constructed container specific to section
+ */
 const ProfileContentSection = (args) => {
 	if(args.section === "ABOUT"){
 		return (
@@ -21,7 +34,7 @@ const ProfileContentSection = (args) => {
 	else if(args.section === "EXPERIENCE"){
 		return (
 			<div className='profile-content'>
-				experience
+				<ProfileExperienceSection />
 			</div>
 		)
 	}

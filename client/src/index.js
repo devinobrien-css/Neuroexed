@@ -11,7 +11,7 @@ import {
 import './index.css';
 import Header from './header';
 import Nav from './nav';
-import UserProfile from './pages/users/user';
+import UserProfile from './pages/user/user';
 import Login from './pages/login/login';
 
 import {FETCH_USER,FETCH_USERS} from './queries/user_queries';
