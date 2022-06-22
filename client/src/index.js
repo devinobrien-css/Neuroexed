@@ -71,15 +71,6 @@ function FetchUser(args) {
 	return (
         data.users.map(({id, first, last, title, email, skillsConnection}) => (
             <UserProfile first={first} last={last} title={title} email={email} skills={skillsConnection} />
-            
-            
-            // <div>
-            //         Welcome {first} {last} <br/>
-            //         Your Skills:
-            //         {skillsConnection.edges.map(({rating,node}) => (
-            //             <p>{rating} -- {node.title}</p>
-            //         ))}
-            // </div>
         ))	
 	);
 }
