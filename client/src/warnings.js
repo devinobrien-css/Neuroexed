@@ -13,7 +13,7 @@ const Warning = (args) => {
 				</div>
 				<div>
                     <div>
-                        <p>Action Item Required</p>
+                        <p>{args.header}</p>
 					    <p>{args.message}</p>
                     </div>
 				</div>

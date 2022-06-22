@@ -122,11 +122,9 @@ function FetchAdmin(args) {
  */
 const DataReach = (args) => {
     if(args.req === 'USER'){
-        console.log('fetching user ')
         return (
             <ApolloProvider client={client}>
                 <FetchUser email={args.user_id} />
-                {/* <FetchUsers /> */}
             </ApolloProvider>
         );
     }
