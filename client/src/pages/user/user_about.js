@@ -1,9 +1,24 @@
+/* Connect-Lite : About Section for User Page
+ *********************************************
+ * Holds components specific to the about 
+ * section of the user page
+ */
 import React from 'react';
-import './user_about.css';
-import './user.css';
-import Warning from '../../warnings'
+
+/* STYLESHEET IMPORTS */
+import '../../components/content_sections.css'; //contains column and row container styles
+import './user.css'; //contains styles specific to the user page
+import './user_about.css'; //contains styles specific to the user-about section
+
+/* COMPONENT AND ELEMENT IMPORTS */
+import Warning from '../../components/warnings/warnings'; //contains warning sections and modals
 
 
+/** Builds a users showcase row out of their specified top 5 skills (if specified)
+ * 
+ * @param {*} args : skills - list of up to five skills to showcase
+ * @returns A showcase row based off of a users specified top 5 skills
+ */
 const ShowcaseRow = (args) => {
 	//add conditional (if len(showcased) == 0)
 
@@ -33,19 +48,50 @@ const ShowcaseRow = (args) => {
 	)
 }
 
+/** Constructs and returns the bio of the about section on the user page 
+ * 
+ * @param {*} args 
+ * @returns 
+ */
+const ProfileBio = (args) => {
+    var bio = <></>;
+
+    if(args.bio != null){
+        bio = (
+            <div className='section-content'>
+                <p>{args.bio}</p>
+            </div> 
+        );
+    }
+    else {
+        bio = <Warning header={'Action Requested'} message={'You have not filled out your biography.'}/>;
+    }
+
+    return (
+        <>
+            <div className='section-header'>
+                <p>ABOUT</p>
+                <button>edit</button>
+            </div>
+            {bio}
+        </>
+    );
+}
+
+
+/** Generates and returns the user page about section
+ * 
+ * @param {*} args {
+ *      data : object holding user data (bio, top five skills, linked accounts, projects, timeline data)
+ * }
+ * @returns the about section of a user page
+ */
 const ProfileAboutSection = (args) => {
 	return (
-		<div className='profile-content'>
-            <div className='profile-content-column-sm'>
+		<div className='content column-container'>
+            <div className='content-column-sm'>
                 <div className='content-section'>
-                    <div className='section-header'>
-                        <p>ABOUT</p>
-                        <button>edit</button>
-                    </div>
-                    <div>
-                        {/* ADD FUNCTIONALITY TO CHECK IF DATA EXISTS OR IF WARNING NEEDED */}
-                        <Warning header={'Action Requested'} message={'You have not filled out your biography.'}/>
-                    </div>
+                    <ProfileBio/>
                     <br/>
                     <br/>
                     <hr/>
@@ -65,7 +111,8 @@ const ProfileAboutSection = (args) => {
                     </div>
                 </div>
             </div>
-            <div className='profile-content-column-lg'>
+
+            <div className='content-column-lg'>
                 <div className='content-section'>
                     <div className='section-header'>
                         <p>CURRENT PROJECTS</p>

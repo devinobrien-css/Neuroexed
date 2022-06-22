@@ -1,5 +1,12 @@
+/* Connect-Lite : User About Section Stylesheet
+ ***********************************************
+ * Holds styles specific to the about sections
+ * and containers on the user page
+ */
 
-
+ /* Spin animation for the showcase row buttons
+  *
+  */
 @keyframes spin {
     from {
         transform: rotate(0deg);
@@ -9,8 +16,9 @@
     }
 }
 
-
-
+/*  Styles for the skill showcase row
+ *
+ */
 div.showcase-row {
     display:flex;
     padding:1.5em 0;

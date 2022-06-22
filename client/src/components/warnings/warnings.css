@@ -1,0 +1,31 @@
+div.warning {
+    border:2px solid yellow;
+    background-color: rgba(209, 209, 30, 0.46);
+    display: flex;
+    padding:0.5em;
+}
+div.warning > div:first-child > p {
+    padding:0.15em 0.4em;
+    width: fit-content;
+    border: 2px solid darkorange;
+    border-radius: 50%;
+    color:darkorange;
+    font-size: 1.35em;
+    margin:0 auto; 
+    font-family: 'Lato', sans-serif;
+}
+div.warning > div:nth-child(2) > div{
+    padding-left:0.5em;
+}
+div.warning > div:nth-child(2) > div > p:first-child {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.35em;
+    margin:0;
+    padding: 0.2em 0;
+}
+div.warning > div:nth-child(2) > div > p:nth-child(2){
+    color:darkslategray;
+    font-family: 'Raleway',sans-serif;
+    font-weight: thin 100;
+    margin:0
+}

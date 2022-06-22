@@ -5,31 +5,3 @@ body{
     background-color: rgb(240,240,240);
 }
 
-div.container {
-    position: relative;
-    width:85%;
-    height:140vh;
-    top:6em;
-    left: 10em;
-    transition:width 1s ease;
-}
-@media screen and (min-width:1470px) {
-    div.container {
-        width:88%;
-    }
-}
-@media screen and (max-width:1100px) {
-    div.container {
-        width:80%;
-    }
-}
-@media screen and (max-width:750px) {
-    div.container {
-        width:75%;
-    }
-}
-@media screen and (max-width:630px) {
-    div.container {
-        width:65%;
-    }
-}
