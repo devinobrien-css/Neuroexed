@@ -3,42 +3,13 @@ import React from 'react';
 import './user.css';
 import Warning from '../../warnings';
 
+import ProfileAboutSection from './user_about';
+
+
 const ProfileContentSection = (args) => {
 	if(args.section === "ABOUT"){
 		return (
-			<div className='profile-content'>
-				<div className='profile-content-column-sm'>
-					<div className='column-section'>
-						<div className='column-section-header'>
-							<p>ABOUT</p>
-							<button>edit</button>
-						</div>
-						<div>
-							{/* ADD FUNCTIONALITY TO CHECK IF DATA EXISTS OR IF WARNING NEEDED */}
-							<Warning header={'Action Requested'} message={'You have not filled out your biography.'}/>
-						</div>
-						<br/>
-						<hr/>
-						<br/>
-						<div className='column-section-header'>
-							<p>SHOWCASE</p>
-						</div>
-						<div>
-							{/* ADD FUNCTIONALITY TO CHECK IF DATA EXISTS OR IF WARNING NEEDED */}
-							<Warning header={'Action Requested'} message={'You have not chosen any items to showcase. Select up to 5 of your skills or certifications that you want to showcase on your profile for others to see.'}/>
-
-						</div>
-					</div>
-					<div className='column-section'>
-						Skill 2
-					</div>
-				</div>
-				<div className='profile-content-column-lg'>
-					<div className='column-section'>
-						Skill 1
-					</div>
-				</div>
-			</div>
+			<ProfileAboutSection />
 		)
 	}
 	else if(args.section === "SKILLS"){

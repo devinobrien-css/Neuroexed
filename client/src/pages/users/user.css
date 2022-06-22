@@ -109,3 +109,12 @@ div.column-section-header > button {
     border:0.15em solid darkslategray;
     border-radius:0.2em
 }
+div.column-section-content > p {
+    color:darkslategray;
+    font-size: 1.2em;
+    padding:0.25em;
+    font-family: 'Lato', sans-serif;
+}
+
+
+
