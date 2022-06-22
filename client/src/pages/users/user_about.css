@@ -13,13 +13,14 @@
 
 div.showcase-row {
     display:flex;
-    padding:1.5em 0.5em;
+    padding:1.5em 0;
+    flex-wrap: wrap;
 }
 div.showcase-row > div {
     border-radius:50%;
     outline:2px solid black;
     padding: 1.7em 0.5em;
-    margin: 0 auto;
+    margin: 1em auto;
     transition: transform 400ms ease;
 }
 div.showcase-row > div:hover {

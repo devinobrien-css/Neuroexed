@@ -9,16 +9,16 @@ div.container {
     position: relative;
     width:85%;
     height:140vh;
-    top:5.25em;
-    left: 9em;
+    top:6em;
+    left: 10em;
     transition:width 1s ease;
 }
 @media screen and (min-width:1470px) {
     div.container {
-        width:90%;
+        width:88%;
     }
 }
-@media screen and (max-width:1000px) {
+@media screen and (max-width:1100px) {
     div.container {
         width:80%;
     }

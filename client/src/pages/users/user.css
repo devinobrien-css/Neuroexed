@@ -1,13 +1,13 @@
 div.profile-header {
-    width: 95%;
     background-image:url('../../img/hex-bg.webp');
     background-position: center;
     margin:0 auto;
     box-shadow: 1px 1px 4px lightslategray;
     display:flex;
-    padding:1em;
+    padding:1em
 }
 div.profile-header > div > img {
+    
     border-radius: 50%;
     border:4px solid white;
     margin-bottom:-2.5em;
@@ -34,12 +34,11 @@ div.profile-header > div:nth-child(2) > p:nth-child(2) {
 
 
 div.profile-toggle-menu {
-    width: 95%;
     background-color:indigo;
     margin:0 auto;
+    padding-top:1em;
     box-shadow: 1px 1px 4px lightslategray;
     display:flex;
-    padding:1em 1em 0 1em;
 }
 div.profile-toggle-menu > div {
     margin-left:14em;
@@ -66,40 +65,72 @@ div.profile-toggle-menu > div > button.selected {
 
 
 div.profile-content {
-    width: 95%;
     margin:0 auto;
     display:flex;
     justify-content: space-between;
-    padding:1em;
+    transition: all 1s ease;
 }
 div.profile-content-column {
-    margin:0 -1em;
     width:50%;
 }
 div.profile-content-column-sm {
-    margin:0 -1em;
-    width:30%;
+    width:35%;
+    transition: width 1s ease;
 }
 div.profile-content-column-lg {
-    width:68%;
+    width:63%;
+    transition: width 1s ease;
 }
-div.column-section {
+@media screen and (max-width:1100px) {
+    div.profile-content{
+        display: block;
+    }
+    div.profile-content-column-sm {
+        width:100%;
+    }
+    div.profile-content-column-lg {
+        width:100%;
+    }
+}
+@media screen and (max-width:750px) {
+
+}
+@media screen and (max-width:630px) {
+
+}
+
+
+
+div.content-section {
     border-top:2em solid indigo;
-    width:100%;
-    margin-bottom: 1.5em;
+    margin: 1.5em 0;
     box-shadow: 1px 1px 4px lightslategray;
-    padding:0.5em;
+    padding:1em;
 }
-div.column-section-header {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+div.section-header {
     display: flex;
     justify-content: space-between;
 }
-div.column-section-header > p {
+div.section-header > p {
     font-size: 2em;
     font-family: 'League Gothic', sans-serif;
     margin:0.5em 0;
 }
-div.column-section-header > button {
+div.section-header > button {
     color:darkslategray;
     font-size: 1em;
     padding:0.25em;
@@ -109,7 +140,7 @@ div.column-section-header > button {
     border:0.15em solid darkslategray;
     border-radius:0.2em
 }
-div.column-section-content > p {
+div.section-content > p {
     color:darkslategray;
     font-size: 1.2em;
     padding:0.25em;

@@ -4,6 +4,7 @@ import './user.css';
 import Warning from '../../warnings';
 
 import ProfileAboutSection from './user_about';
+import ProfileSkillsSection from './user_skills';
 
 
 const ProfileContentSection = (args) => {
@@ -14,9 +15,7 @@ const ProfileContentSection = (args) => {
 	}
 	else if(args.section === "SKILLS"){
 		return (
-			<div className='profile-content'>
-				skills
-			</div>
+			<ProfileSkillsSection />
 		)
 	}
 	else if(args.section === "EXPERIENCE"){
