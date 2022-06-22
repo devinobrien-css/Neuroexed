@@ -14,7 +14,19 @@ const ProfileContentSection = (args) => {
 							<button>edit</button>
 						</div>
 						<div>
-							<Warning message={'You have not filled out your biography.'}/>
+							{/* ADD FUNCTIONALITY TO CHECK IF DATA EXISTS OR IF WARNING NEEDED */}
+							<Warning header={'Action Requested'} message={'You have not filled out your biography.'}/>
+						</div>
+						<br/>
+						<hr/>
+						<br/>
+						<div className='column-section-header'>
+							<p>SHOWCASE</p>
+						</div>
+						<div>
+							{/* ADD FUNCTIONALITY TO CHECK IF DATA EXISTS OR IF WARNING NEEDED */}
+							<Warning header={'Action Requested'} message={'You have not chosen any items to showcase. Select up to 5 of your skills or certifications that you want to showcase on your profile for others to see.'}/>
+
 						</div>
 					</div>
 					<div className='column-section'>
