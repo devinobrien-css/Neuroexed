@@ -1,7 +1,20 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
+
+/* STYLESHEET IMPORTS */
 import './nav.css';
 
+/* COMPONENT AND ELEMENT IMPORTS */
+
+
+/** Builds and returns a menu bar with buttons referencing toggle function
+ * 
+ * @param {*} args {
+ *      page : specifies the current tab selected
+ * 		functions : list of pointers referencing in-class toggle function
+ * }
+ * @returns a navigation bar with buttons referencing in-class toggle function
+ */
 const Buttons = (args) => {
     const buttons = ['USER','PEOPLE','PROJECTS','SKILLS'];
     const output = [];
@@ -16,6 +29,14 @@ const Buttons = (args) => {
     return output;
 }
 
+/** Constructs and returns the website navigation bar
+ * 
+ * @param {*} args {
+ *      current : current page selected
+ *      functions : list of functions referencing toggle function
+ * }
+ * @returns 
+ */
 const Nav = (args) => {
     return (
         <div className='nav'>

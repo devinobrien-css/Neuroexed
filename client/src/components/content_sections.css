@@ -1,9 +1,9 @@
 div.container {
     position: relative;
     width:85%;
-    height:140vh;
     top:6em;
     left: 10em;
+    height:110vh;
     transition:width 1s ease;
 }
 @media screen and (min-width:1470px) {

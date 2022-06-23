@@ -25,8 +25,8 @@ div.showcase-row {
     flex-wrap: wrap;
 }
 div.showcase-row > div {
-    border-radius:50%;
-    outline:2px solid black;
+    border-radius:0.8em;
+    outline:2px solid gray;
     padding: 1.7em 0.5em;
     margin: 1em auto;
     transition: transform 400ms ease;
@@ -41,7 +41,7 @@ div.showcase-row > div > div{
     display: block;
     height:0.2em;
     width:3em;
-    background-color: black;
+    background-color: gray;
 }
 div.showcase-row > div > div:nth-child(2){
     margin-top: -0.1em;

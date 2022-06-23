@@ -1,10 +1,20 @@
 import React from 'react';
+
+/* STYLESHEET IMPORTS */
 import '../../components/content_sections.css'; //contains column and row container styles
+
+/* COMPONENT AND ELEMENT IMPORTS */
 import Warning from '../../components/warnings/warnings'; //contains warning sections and modals
 import './user.css'; //contains styles specific to the user page
 
 
-
+/** Builds and returns all inner sections of a user profile experience section
+ * 
+ * @param {*} args {
+ * 
+ * }
+ * @returns 
+ */
 const ProfileExperienceSection = (args) => {
     return (
         <div className='content column-container'>
