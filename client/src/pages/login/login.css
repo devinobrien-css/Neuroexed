@@ -1,8 +1,10 @@
-
+/* Connect-Lite : Login Page Stylesheet
+ ******************************************
+ * Holds styles specific to the login page
+ */
 
 div.modal-bg {
     background-color: darkslategray;
-    /* width: 100vw; */
     height: 100vh; 
 }
 div.login-modal {

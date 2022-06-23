@@ -1,7 +1,11 @@
-import ReactDOM from 'react-dom';
 import React from 'react';
+
+/* STYLESHEET IMPORTS */
 import './login.css';
 
+/** Builds and returns the website login page
+ * @returns a login modal
+ */
 const Login = () => {
     return <div className='modal-bg'>
         <div className='login-modal'>

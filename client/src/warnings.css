@@ -1,3 +1,10 @@
+/* Connect-Lite : Website Warnings Stylesheet
+ *******************************************************
+ * Holds styles specific to warning sections and modals
+ */
+
+
+
 div.warning {
     border:2px solid yellow;
     background-color: rgba(209, 209, 30, 0.46);

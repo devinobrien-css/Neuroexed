@@ -1,13 +1,30 @@
 import React from 'react';
+import ReactDOM from "react-dom";
+import { ArcElement, Chart} from 'chart.js';
+import { Doughnut } from "react-chartjs-2";
+import { chartColors } from "./chart_colors";
+
+/* STYLESHEET IMPORTS */
 import '../../components/content_sections.css'; //contains column and row container styles
-import Warning from '../../components/warnings/warnings'; //contains warning sections and modals
 import './user.css'; //contains styles specific to the user page
 import './user_skills.css'; //contains styles specific to the user skills section
 
+/* COMPONENT AND ELEMENT IMPORTS */
+import Warning from '../../components/warnings/warnings'; //contains warning sections and modals
+import SkillsChart from './user_skills_chart';
 
-const ProfileSkillsSection = (args) => {
-	return (
-        <>
+
+
+/** Builds and returns the skills summary subsection
+ * 
+ * @param {*} args {
+ * 
+ * }
+ * @returns the skills sumary subsection of the user page
+ */
+const SkillsSummary = (args) =>{
+
+        return (
             <div className='content '>
                 <div className='content-section-header content-row'>
                     <p><svg viewBox="64 64 896 896" focusable="false" data-icon="code" width="1em" height="0.8em" fill="currentColor" aria-hidden="true"><path d="M516 673c0 4.4 3.4 8 7.5 8h185c4.1 0 7.5-3.6 7.5-8v-48c0-4.4-3.4-8-7.5-8h-185c-4.1 0-7.5 3.6-7.5 8v48zm-194.9 6.1l192-161c3.8-3.2 3.8-9.1 0-12.3l-192-160.9A7.95 7.95 0 00308 351v62.7c0 2.4 1 4.6 2.9 6.1L420.7 512l-109.8 92.2a8.1 8.1 0 00-2.9 6.1V673c0 6.8 7.9 10.5 13.1 6.1zM880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z"></path></svg> SKILLS SUMMARY</p>
@@ -15,23 +32,52 @@ const ProfileSkillsSection = (args) => {
                 <div className='borderless-content-section content-row'>
                     <div className='content column-container'>
                         <div className='content-column'>
-                            <div className='content '>
-                                <div className='section-header '>
-                                    <p>Your relevant skills:</p>
+                            <div className='content'>
+                                <div className='skills-summary-section'>
+                                    <div className='section-header '>
+                                        <p>Knowledgable skills:</p>
+                                    </div>
+                                    <div className='section-content '>
+                                        <p>No skills specified</p>
+                                    </div>
+                                    <div className='section-header '>
+                                        <p>Proficient skills:</p>
+                                    </div>
+                                    <div className='section-content '>
+                                        <p>No skills specified</p>
+                                    </div>
+                                    <div className='section-header '>
+                                        <p>Lead/Teachable skills:</p>
+                                    </div>
+                                    <div className='section-content '>
+                                        <p>No skills specified</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className='content-column'>
-                            <div className='content '>
-                                <div className='section-header '>
-                                    
-                                </div>
+                            <div className='content'>
+                                <SkillsChart />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        );
+}
 
+/** Builds and returns the skills section of the user page
+ * 
+ * @param {*} args {
+ * 
+ * }
+ * @returns the skills section of the user page
+ */
+const ProfileSkillsSection = (args) => {
+	return (
+        <>
+            <SkillsSummary />
+            
             <div className='content column-container'>
                 <div className='content-column-lg'>
                     <div className='content '>

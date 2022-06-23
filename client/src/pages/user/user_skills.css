@@ -3,3 +3,7 @@
  * Holds styles specific to the skills section
  * and containers on the user page
  */
+
+ div.skills-summary-section {
+    padding:1em;
+}

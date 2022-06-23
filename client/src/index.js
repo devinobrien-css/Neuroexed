@@ -27,7 +27,10 @@ const client = new ApolloClient({
 
 
 
-
+/** Fetches and returns list of all users
+ * 
+ * @returns 
+ */
 function FetchUsers() {
   const { loading, error, data } = useQuery(FETCH_USERS);
 
@@ -45,9 +48,6 @@ function FetchUsers() {
     </div>
   ));
 }
-
-
-
 
 /** Reaches to Apollo Server, returns rendered user page
  * 
@@ -133,8 +133,7 @@ const DataReach = (args) => {
     }
 }
 
-
-/** Holds the current page's sections
+/** Holds the current selected page's content
  * 
  * @param {String} args {
  *      req : specifies the type of page to be rendered (user, admin, etc)
@@ -180,9 +179,6 @@ const ContentBin = (args) => {
     }
         
 }
-
-
-
 
 /** Main Application Container - controls page functionality/content rendering
  * @returns the current user requested page
