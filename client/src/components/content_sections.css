@@ -112,3 +112,13 @@ div.section-content > p {
     padding:0.25em;
     font-family: 'Lato', sans-serif;
 }
+
+
+
+
+
+hr.vertical-divider {
+    border:1px solid gray;
+    height: inherit;
+    margin: 2em auto
+}
