@@ -1,0 +1,198 @@
+/* Connect-Lite : Skills Page Stylesheet
+ **********************************************
+ */
+div.skills-header {
+    /* background-image:url('../../img/standard-bg-light.png'); */
+    background-image:url('../../img/hex-bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:0 auto;
+    box-shadow: 1px 1px 4px lightslategray;
+    display:flex;
+    padding:1em
+}
+
+div.skills-container {
+    height:110vh;
+    margin-top:3em;
+}
+
+div.skills-aggregation-bar {
+    padding:1em;
+    background-color: white;
+    display: flex;
+    box-shadow: 1px 1px 4px lightslategray;
+}
+
+div.skills-aggregation-bar > div:first-child {
+    display: flex;
+}
+div.skills-aggregation-bar > div:first-child > div {
+    padding:1em;
+    border:2px solid turquoise;
+    background-color: turquoise;
+    color:white;
+    border-top-right-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+}
+div.skills-aggregation-bar > div:first-child > div:active{
+    color:darkslategray;
+    background-color: lightgray;
+}
+div.skills-aggregation-bar > div > input{
+    border-top-left-radius: 0.3em;
+    border-bottom-left-radius: 0.3em;
+    border: 2px solid turquoise;
+}
+
+div.skills-aggregation-bar > div > button  {
+    border-radius: 0.2em;
+    border: 2px solid turquoise;
+    color:darkslategray;
+    padding:1.25em;
+    font-family: 'Jost';
+    font-size: 1em;
+}
+div.skills-aggregation-bar > div > button:active {
+    background-color: turquoise;
+    color:white;
+}
+
+div.skills-aggregation-bar > div > button {
+    margin-left: 1.25em;
+    background-color: whitesmoke;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+div.skills-list {
+    height: 90vh;
+    margin-top:3em;
+    background-color: white;
+    box-shadow: 1px 1px 4px lightslategray;
+}
+
+div.list-header {
+    
+    border-bottom:2px dashed rgba(160, 154, 154, 0.25) !important;
+}
+
+div.list-row {
+    display: flex;
+    flex-wrap: nowrap;
+    border-bottom: 2px solid rgba(160, 154, 154, 0.25);
+}
+div.list-row > div {
+    padding:1em;
+}
+
+div.list-row > div:first-child {
+    flex-basis:6%;
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+}
+div.list-row > div:nth-child(2) {
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+    flex-basis:7%;
+}
+div.list-row > div:nth-child(3) {
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+    flex-basis:28%;
+}
+div.list-row > div:nth-child(4) {
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+    flex-basis:12%;
+}
+div.list-row > div:nth-child(5) {
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+    flex-basis:17%;
+}
+div.list-row > div:nth-child(6) {
+    border-right: 2px solid rgba(160, 154, 154, 0.25);
+    flex-basis:10%;
+}
+div.list-row > div:nth-child(7) {
+    flex-basis:6%;
+}
+
+div.list-header > div > p {
+    text-align: center;
+    font-family: 'Lato';
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+
+div.skill-form-input {
+    border-top:1px solid lightgray;
+    border-left:1px solid lightgray;
+    border-right:1px solid lightgray;
+    border-bottom:3px solid indigo;
+    background-color: rgba(240,240,240,0.6);
+
+    padding:0.25em
+}
+div.skill-form-input > p {
+    font-family: 'Lato';
+    margin:0;
+}
+
+div.skill-form-input > input,div.skill-form-input > textarea {
+    width: 98%;
+    background-color: transparent;
+    border: none;
+    font-family: 'Lato'
+}
+
+div.skill-form-submit > button {
+    border:none;
+    border-radius: 0.3em;
+    padding:1em;
+    width: 50%;
+    margin:0 auto;
+    display: block;
+    background-color: transparent;
+    background-color: indigo;
+    color:white;
+    font-family: 'Lato';
+    font-size: 1em;
+}
+
+div.skill-form-submit > button:active {
+    background-color: turquoise;
+    color:white;
+}
+
+
+div.skill-category-list {
+    padding:0.5em;
+    display: flex;
+}
+
+div.skill-category-list > button {
+    border-radius: 0.2em;
+    display: block;
+    margin:0 auto;
+    font-family: 'Jost';
+    transition: all 200ms ease-in-out;
+    border:2px solid turquoise;
+    background-color: white;
+}
+
+div.skill-category-list > button.selected {
+   border:2px solid indigo;
+   background-color: turquoise;
+}

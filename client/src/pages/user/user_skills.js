@@ -15,6 +15,33 @@ import SkillsChart from './user_skills_chart';
 
 
 
+/** Adds a skill connection to a user
+ * 
+ */
+const AddSkillButton = (agrs) => {
+    return (
+        <div className='add-skill-button'>
+            
+        </div>
+    )
+}
+
+
+/** Builds and returns a summary list of skills including skill img and title
+ * 
+ * @param {*} args 
+ */
+const SkillsSummaryList = (args) => {
+    return (
+        <div className='summary-list-container'>
+            <AddSkillButton />
+        </div>
+    )
+}
+
+
+
+
 /** Builds and returns the skills summary subsection
  * 
  * @param {*} args {
@@ -38,7 +65,7 @@ const SkillsSummary = (args) =>{
                                         <p>Knowledgable skills:</p>
                                     </div>
                                     <div className='section-content '>
-                                        <p>No skills specified</p>
+                                        <SkillsSummaryList type={'Knowledgable'} />
                                     </div>
                                     <div className='section-header '>
                                         <p>Proficient skills:</p>
@@ -55,6 +82,7 @@ const SkillsSummary = (args) =>{
                                 </div>
                             </div>
                         </div>
+                        <hr className='vertical-divider'/>
                         <div className='content-column'>
                             <div className='content'>
                                 <SkillsChart />

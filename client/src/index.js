@@ -14,7 +14,8 @@ import Nav from './nav';
 import UserProfile from './pages/user/user';
 import Login from './pages/login/login';
 
-import {FETCH_USER,FETCH_USERS} from './queries/user_queries';
+import {FetchUser,FetchUsers} from './queries/user_queries';
+import SkillsPage from './pages/skills/skills';
 
 
 // establish server connection
@@ -27,53 +28,9 @@ const client = new ApolloClient({
 
 
 
-/** Fetches and returns list of all users
- * 
- * @returns 
- */
-function FetchUsers() {
-  const { loading, error, data } = useQuery(FETCH_USERS);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error : {error.message}</p>;
 
-  return data.users.map(({id, first, last, email, skillsConnection}) => (
-    <div key={id}>
-			{id}
-			{first} {last} <br/>
-			-- {email}
-			{skillsConnection.edges.map(({rating,node}) => (
-				<p>{rating} -- {node.title}</p>
-			))}
-    </div>
-  ));
-}
 
-/** Reaches to Apollo Server, returns rendered user page
- * 
- * @param {*} args 
- * @returns 
- */
-function FetchUser(args) {
-    //query data
-	const { loading, error, data } = useQuery(FETCH_USER,{variables:{
-        "where": {
-            "email": args.email
-        }
-    }});
-
-    //validate safe retrieval
-	if (loading) return <p>Loading...</p>;
-	if (error) return <p>Error : {error.message}</p>;
-    if (data.users.length != 1) return <p>Internal Duplication Error</p>;
-
-    //return UserProfile
-	return (
-        data.users.map(({id, first, last, title, email, skillsConnection}) => (
-            <UserProfile first={first} last={last} title={title} email={email} skills={skillsConnection} />
-        ))	
-	);
-}
 
 
 
@@ -165,9 +122,7 @@ const ContentBin = (args) => {
     }
     else if(args.req === 'SKILLS'){
         return (
-            <div className='container'>
-                <p>SKILLS</p>
-            </div>
+            <SkillsPage />
         )
     }
     else {
