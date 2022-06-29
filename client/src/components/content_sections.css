@@ -1,29 +1,29 @@
 div.container {
-    position: relative;
-    width:85%;
-    top:6em;
-    left: 10em;
-    height:110vh;
+    position: absolute;
+    width:88%;
+    top:1em;
+    left: 1em;
+    right:1em;
     transition:width 1s ease;
 }
-@media screen and (min-width:1470px) {
+@media screen and (max-width:1570px) {
     div.container {
-        width:88%;
+        width:85%;
     }
 }
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1250px) {
     div.container {
         width:80%;
     }
 }
-@media screen and (max-width:850px) {
+@media screen and (max-width:900px) {
     div.container {
-        width:75%;
+        width:70%;
     }
 }
-@media screen and (max-width:690px) {
+@media screen and (max-width:700px) {
     div.container {
-        width:71%;
+        width:92%;
     }
 }
 
@@ -35,12 +35,14 @@ div.content {
 div.column-container {
     display:flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 div.content-row {
     width:100%;
 }
 div.content-column {
-    width:50%;
+    width:48%;
 }
 div.content-column-sm {
     width:35%;
@@ -53,11 +55,15 @@ div.content-column-lg {
 @media screen and (max-width:1150px) {
     div.column-container{
         display: block;
+        justify-content: normal;
     }
     div.content-column-sm {
         width:100%;
     }
     div.content-column-lg {
+        width:100%;
+    }
+    div.content-column {
         width:100%;
     }
 }

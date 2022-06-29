@@ -5,17 +5,29 @@
 
 div.nav{
     height: 100vh;
-    background-image: url('./img/hex-nav-bg.png');
+    background-image: url('./img/hex-nav-bg.webp');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: fixed;
 
-    left:0;
-    top:2em;
+    box-shadow: 1px 1px 4px lightslategray;
+    right:0;
+    /* left:0; */
+    top:0;
     padding-top:3em;
     display: flex;
     flex-direction: column;
+    z-index: 100;
+    transition: transform 1s ease;
+}
+@media screen and (max-width:700px) {
+    div.nav {
+        transform: translateX(20em);
+    }
+}
+div.show {
+    transform: translateX(0em);
 }
 
 div.nav > button {
@@ -29,11 +41,43 @@ div.nav > button {
 
 div.nav > button:hover {
     background-color: blueviolet;
+    width: 100%;
     transition: background-color 500ms ease;
 }
 
 div.nav > button.current {
     background-color: white;
-    outline:0.25em solid lightslategray;
-    color:indigo
+    border-right:0.25em solid lightslategray;
+    color:navy;
+    width:100%;
+}
+
+
+div.hamburger {
+    height:3em;
+    background-image: url('./img/hex-nav-bg.webp');
+    background-size:contain;
+    width: 15%;
+    max-width: 4em;
+    position: fixed;
+    top:1em;
+    right:0.5em;
+    z-index: 1001;
+    border-radius: 0.2em;
+}
+div.hamburger > div {
+    min-height: 10%;
+    background-color: white;
+    width: 80%;
+    margin:0.48em auto;
+    transition: transform 600ms ease;
+
+}
+div.hamburger:hover > div:nth-child(2) {
+    transform: rotate(0.5turn);
+}
+@media screen and (min-width:700px) {
+    div.hamburger {
+        display: none;
+    }
 }

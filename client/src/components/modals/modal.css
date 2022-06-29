@@ -11,14 +11,14 @@
 
 div.modal-bg {
     z-index: 800;
-    position: absolute;
+    position: fixed;
     height: 200vh;
     width: 100%;
     background-color: rgba(2, 1, 1, 0.5);
 }
 
 div.modal {
-    border-top: 2.5em solid indigo;
+    border-top: 2.5em solid navy;
     padding:1em;
     z-index: 1001;
     background-color: white;
@@ -29,7 +29,7 @@ div.modal {
     margin:auto;
     border-radius: 0.3em;
     animation: zoom-in 600ms ease;
-    background-image: url('../../img/standard-bg-light.png');
+    background-image: url('../../img/standard-bg-light.webp');
     background-position: center;
     background-size: cover
 }

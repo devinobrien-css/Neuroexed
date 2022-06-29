@@ -1,0 +1,399 @@
+/* Connect-Lite : General User Page Stylesheet
+ **********************************************
+ * Holds styles specific to general sections
+ * and containers on the user homepage
+ */
+
+
+/* Profile Header Styles
+ *
+ */
+ div.landing-header {
+    background-image:url('../../img/hex-bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:1em auto;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding:1em;
+}
+div.landing-header > div:first-child > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    padding: 0;
+    margin:0;
+    color:white;
+}
+@media screen and (max-width:700px) {
+    div.landing-header > div:first-child > p{
+        font-size: 2em;
+    }
+}
+div.landing-header > div:nth-child(2) > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    padding: 0;
+    margin:0;
+    color:white;
+    font-style: italic;
+}
+
+
+
+
+
+div.landing-quote {
+    background-image:url('../../img/standard-bg-light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:1em auto;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding:1em;
+}
+div.landing-quote > div:first-child > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+    padding: 0;
+    margin:0 auto;
+    color:navy;
+    text-align: center;
+}
+div.landing-quote > div:nth-child(2) > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8em;
+    padding: 0;
+    margin:0;
+    text-align: center;
+    font-style: italic;
+}
+
+
+
+
+div.brain-container {
+    margin:1em auto;
+}
+
+div.landing-brain {
+    background-image: url('https://neuroexed.com/img/brains/brain.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    height: 100%;
+
+}
+div.landing-brain-detail {
+    background-image:url('../../img/standard-bg-light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding: 4em;
+}
+
+div.landing-brain-detail > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
+}
+@media screen and (max-width:700px) {
+    div.landing-brain-detail{
+        padding:1em;
+    }
+    div.landing-brain-detail > p{
+        font-size: 0.9em;
+    }
+}
+
+
+@media screen and (max-width:1150px) {
+    div.landing-brain{
+        height:30em;
+
+    }
+}
+@media screen and (max-width:1050px) {
+    div.landing-brain{
+        height:20em;
+
+    }
+}
+
+@media screen and (min-width:1650px) {
+    div.landing-brain-detail > p{
+        line-height: 2em;
+    }
+}
+
+
+
+div.blog-container {
+    background-image:url('../../img/standard-bg-light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding: 2em;
+    margin-bottom:1em;
+}
+@media screen and (max-width:700px) {
+    div.blog-container {
+        padding: 0.3em;
+    }
+}
+div.blog-container > p {
+    font-family: 'Lato';
+    font-size:2em;
+    margin: 0;
+}
+
+
+
+
+div.blog {
+    box-shadow: 1px 1px 4px lightslategray;
+    padding: 1em;
+    background-color: white;
+    margin: 1em auto;
+    transition: box-shadow 500ms ease;
+}
+div.blog:hover {
+    box-shadow: 1px 1px 2em lightslategray;
+}
+
+div.blog > div:first-child {
+    display: flex;
+}
+
+div.blog > div:first-child > div > p {
+    font-family: 'Lato';
+    font-size: 1.3em;
+    line-height: 160%;
+    margin: 0;
+    padding-left: 0.5em;
+}
+@media screen and (max-width:700px) {
+    div.blog > div:first-child {
+        display: block;
+    }
+    div.blog > div > div > svg {
+        margin: 0 auto;
+        display: block;
+        padding:0.5em;
+    }
+    div.blog > div:first-child > div > p{
+        font-size: 1.1em;
+        padding:0;
+    }
+}
+
+
+div.blog > div:first-child > div {
+    border-bottom: 2px solid gray;
+}
+
+div.blog > div:first-child > div:nth-child(2) {
+    width: 100%;
+}
+
+div.blog > div:nth-child(2) > div > p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    padding: 0.5em;
+    text-align: justify;
+}
+div.blog > div:nth-child(3) > button {
+    background-color: ;
+    border:none;
+    padding: 1em;
+    border-radius: 0.4em;
+    margin:1em auto;
+    display: block;
+    color:white;
+    background-color: rgb(65, 133, 146);
+}
+div.blog > div:nth-child(3) > button:active {
+    background-color: rgb(35, 113, 146);
+}
+
+
+
+
+
+
+
+
+
+div.book-section {
+    background-image:url('../../img/standard-bg-light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding: 2em;
+}
+div.book-section > p {
+    font-family: 'Lato';
+    font-size:2em;
+    margin: 0;
+    margin-bottom: 1em;
+}
+
+div.book {
+    box-shadow: 1px 1px 4px lightslategray;
+    background-color: white;
+    padding: 2em;
+}
+
+div.book:nth-child(2) > div:first-child {
+    background-image: url('../../img/diversity.webp');
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+div.book:nth-child(3) > div:first-child {
+    background-image: url('../../img/education.webp');
+    background-position: center;
+    background-size: contain;
+    background-color: transparent;
+    background-repeat: no-repeat;
+}
+
+div.book > div:nth-child(2){
+    padding:2em 0;
+}
+div.book > div:nth-child(2) > p:first-child {
+    font-family: 'Lato';
+    font-size: 1.5em;
+}
+
+div.book > div:nth-child(2) > p:nth-child(2) {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    text-align: justify;
+}
+@media screen and (max-width:700px) {
+    div.book > div:nth-child(2) > p:nth-child(2) {
+        font-size: 1em;
+    }
+    div.book {
+        padding:0.7em;
+    }
+    div.book > div:first-child {
+        height: 14em;
+    }
+    div.book-section {
+        padding: 0.2em !important;
+    }
+}
+div.book > div:nth-child(2) > button {
+    background-color: ;
+    border:none;
+    padding: 1em;
+    border-radius: 0.4em;
+    margin:1em auto;
+    display: block;
+    color:white;
+    background-color: rgb(65, 133, 146);
+}
+div.book > div:nth-child(2) > button:active {
+    background-color: rgb(35, 113, 146);
+}
+
+
+
+
+
+div.reference-row {
+    background-image: url('../../img/hex-bg-dark.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    margin:1em auto;
+    display: flex;
+    padding:1em;
+}
+div.reference-row > div {
+    /* width: 25%; */
+    display: block;
+    box-shadow: 1px 1px 4px lightslategray;
+
+}
+div.reference-row > div {
+    background-color: rgba(250,250,250,0.8);
+    padding:1em;
+    border-radius: 0.2em;
+    display: block;
+    margin: 0 auto;
+    width: 15%;
+    transition: all 500ms ease;
+}
+@media screen and (max-width:700px) {
+    div.reference-row {
+        padding: 0.5em;
+    }
+    div.reference-row > div {
+        padding:0.7em;
+        margin: 0 auto;
+        width: 18%;
+        font-size: 0.7em;
+    }
+}
+div.reference-row > div:hover {
+    -webkit-transform: scale(1.1);
+    -webkit-font-smoothing: antialiased;
+}
+div.reference-row > div > svg {
+    margin: 0 auto;
+    display: block;
+}
+
+div.reference-row > div > p {
+    text-align: center;
+    margin: 0 auto;
+    font-family: 'Lato';
+}
+
+
+
+
+div.space-row {
+    background-image: url('../../img/hex-bg-dark.webp');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 4px lightslategray;
+    margin:1em auto;
+    display: flex;
+    padding:1em;
+}
+
+
+
+div.switch-img-position-top {
+    background-position: top !important;
+}
+
+div.switch-img-position-center {
+    background-position: center !important;
+
+}
+
+
+
+
+div.landing-advertisement {
+    background-image:url('../../img/standard-bg-light.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:1em auto;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding:1em;
+}
+

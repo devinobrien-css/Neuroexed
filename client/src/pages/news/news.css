@@ -1,0 +1,35 @@
+/* Profile Header Styles
+ *
+ */
+ div.news-header {
+    background-image:url('../../img/hex-bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin:1em auto;
+    box-shadow: 1px 1px 4px lightslategray;
+    padding:1em;
+}
+div.news-header > div:first-child > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 3em;
+    padding: 0;
+    margin:0;
+    color:white;
+}
+@media screen and (max-width:700px) {
+    div.news-header > div:first-child > p{
+        font-size: 2em;
+    }
+}
+div.news-header > div:nth-child(2) > p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
+    padding: 0;
+    margin:0;
+    color:white;
+    font-style: italic;
+}
+
+
+

@@ -16,14 +16,14 @@ import './nav.css';
  * @returns a navigation bar with buttons referencing in-class toggle function
  */
 const Buttons = (args) => {
-    const buttons = ['USER','PEOPLE','PROJECTS','SKILLS'];
+    const buttons = ['HOME','PEOPLE','PROJECTS','NEWS','PUBLICATIONS','AFFILIATIONS'];
     const output = [];
-    buttons.forEach((button) => {
+    buttons.forEach((button,index) => {
         if(button === args.page){
-            output.push(<button className='current' onClick={args.functions[button]}>{button}</button>);
+            output.push(<button key={'nav'+index} className='current' onClick={args.functions[button]}>{button}</button>);
         }
         else {
-            output.push(<button onClick={args.functions[button]}>{button}</button>);
+            output.push(<button key={'nav'+index} onClick={args.functions[button]}>{button}</button>);
         }
     })
     return output;
@@ -39,9 +39,16 @@ const Buttons = (args) => {
  */
 const Nav = (args) => {
     return (
-        <div className='nav'>
-            <Buttons page={args.current} functions={args.functions} />
-        </div>
+        <>
+            <div className='hamburger' onClick={() => { document.querySelector('.nav').classList.toggle('show')}}>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div className='nav'>
+                <Buttons page={args.current} functions={args.functions} />
+            </div>
+        </>
     );
 }
 

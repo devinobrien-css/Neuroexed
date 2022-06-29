@@ -1,165 +1,36 @@
 import ReactDOM from 'react-dom/client';
 import React from 'react';
-import {
-  ApolloClient,
-  ApolloProvider,
-  InMemoryCache,
-  useQuery,
-  gql
-} from "@apollo/client";
 
 import './index.css';
-import Header from './header';
 import Nav from './nav';
-import UserProfile from './pages/user/user';
-import Login from './pages/login/login';
-
-import {FetchUser,FetchUsers} from './queries/user_queries';
-import SkillsPage from './pages/skills/skills';
-
-
-// establish server connection
-const client = new ApolloClient({
-  uri: ' http://localhost:4000/',
-  cache: new InMemoryCache()
-});
-
-
-
-
-
-
-
-
-
-
-
-
-//TODO:
-function FetchAdmin(args) {
-    const user_email = args.email;
-	const { loading, error, data } = useQuery(FETCH_USER,{variables:{
-        "where": {
-            "email": "dob@jg.c"
-        }
-    }});
-
-	if (loading) return <p>Loading...</p>;
-	if (error) return <p>Error : {error.message}</p>;
-    if (data.users.length != 1) return <p>Internal Duplication Error</p>;
-
-	return (
-        data.users.map(({id, first, last, email, skillsConnection}) => (
-            <div>
-                    Hello Admin {first} {last} <br/>
-                    Your Skills:
-                    {skillsConnection.edges.map(({rating,node}) => (
-                        <p>{rating} -- {node.title}</p>
-                    ))}
-            </div>
-        ))	
-	);
-}
-
-
-
-/** Reaches to Apollo Server and renders objects
- * 
- * @param {*} args 
- * @returns 
- */
-const DataReach = (args) => {
-    if(args.req === 'USER'){
-        return (
-            <ApolloProvider client={client}>
-                <FetchUser email={args.user_id} />
-            </ApolloProvider>
-        );
-    }
-    else if(args.req === 'ADMIN') {
-        return (
-            <ApolloProvider client={client}>
-                <FetchAdmin email={args.user_id} />
-            </ApolloProvider>
-        );
-    }
-    else {
-        return (
-            <p>Request Undefined</p>
-        );
-    }
-}
-
-/** Holds the current selected page's content
- * 
- * @param {String} args {
- *      req : specifies the type of page to be rendered (user, admin, etc)
- *      user_id : 
- * }
- * @returns the sections for the page requested
- */
-const ContentBin = (args) => {
-    if(args.req === 'USER'){
-        return (
-            <div className='container'>
-                <DataReach req={args.req} user_id={args.user_id}/>
-            </div>
-        )
-    }
-    else if(args.req === 'PEOPLE'){
-        return (
-            <div className='container'>
-                <p>PEOPLE</p>
-            </div>
-        )
-    }
-    else if(args.req === 'PROJECTS'){
-        return (
-            <div className='container'>
-                <p>PROJECTS</p>
-            </div>
-        )
-    }
-    else if(args.req === 'SKILLS'){
-        return (
-            <SkillsPage />
-        )
-    }
-    else {
-        return (
-            <div className='container'>
-                <p>UNKNOWN</p>
-            </div>
-        )
-    }
-        
-}
+import Landing from './pages/landing/landing';
+import People from './pages/people/people';
+import Projects from './pages/projects/projects';
+import Affiliations from './pages/affiliations/affiliations';
+import Books from './pages/books/books';
+import News from './pages/news/news';
 
 /** Main Application Container - controls page functionality/content rendering
  * @returns the current user requested page
  */
 const App = () => {
-    //TODO: ADD AUTH HERE
-    const auth_user_email = 'dobrien@jg.com';
-
     const [currentState, setState] = React.useState("");
 
     if(currentState === "")
-        setState("USER");
+        setState("HOME");
 
     const handleToggle = (state) => {
         setState(state);
     };
-    const stateFunctions = {'USER':()=>handleToggle('USER'), 'PEOPLE': ()=>handleToggle('PEOPLE'), 'PROJECTS': ()=>handleToggle('PROJECTS'), 'SKILLS' : ()=>handleToggle('SKILLS')};
+    const stateFunctions = {'HOME':()=>{handleToggle('HOME'); document.querySelector('.nav').classList.remove('show');}, 'PEOPLE': ()=>{handleToggle('PEOPLE'); document.querySelector('.nav').classList.remove('show');}, 'PROJECTS': ()=>{handleToggle('PROJECTS'); document.querySelector('.nav').classList.remove('show');}, 'NEWS': ()=>{handleToggle('NEWS'); document.querySelector('.nav').classList.remove('show');}, 'PUBLICATIONS': ()=>{handleToggle('PUBLICATIONS'); document.querySelector('.nav').classList.remove('show');}, 'AFFILIATIONS' : ()=>{handleToggle('AFFILIATIONS'); document.querySelector('.nav').classList.remove('show');}};
 
     //TODO: add functionality for page specification
 
-    if(currentState  === 'USER') {
+    if(currentState  === 'HOME') {
         return (
             <>
-                <Header />
                 <Nav current={currentState} functions={stateFunctions}/>
-                <ContentBin req={currentState} user_id={auth_user_email}/>
+                <Landing />
             </>
         );
     }
@@ -174,27 +45,40 @@ const App = () => {
         console.log('current ' + currentState)
         return (
             <>
-                <Header />
                 <Nav current={currentState} functions={stateFunctions}/>
-                <ContentBin req={currentState} user_id={auth_user_email}/>
+                <People />
             </>
         );
     }
     else if(currentState  === 'PROJECTS') {
         return (
             <>
-                <Header />
                 <Nav current={currentState} functions={stateFunctions}/>
-                <ContentBin req={currentState} user_id={auth_user_email}/>
+                <Projects />
             </>
         );
     }
-    else if(currentState  === 'SKILLS') {
+    else if(currentState  === 'NEWS') {
         return (
             <>
-                <Header />
                 <Nav current={currentState} functions={stateFunctions}/>
-                <ContentBin req={currentState} user_id={auth_user_email}/>
+                <News />
+            </>
+        );
+    }
+    else if(currentState  === 'PUBLICATIONS') {
+        return (
+            <>
+                <Nav current={currentState} functions={stateFunctions}/>
+                <Books />
+            </>
+        );
+    }
+    else if(currentState  === 'AFFILIATIONS') {
+        return (
+            <>
+                <Nav current={currentState} functions={stateFunctions}/>
+                <Affiliations />
             </>
         );
     }
